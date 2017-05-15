@@ -254,6 +254,7 @@ int Chucnang(NguoiDung ngDung[], int quyen, int &m, Quyen q[], char tdn[]) {
 	//##########//Quyen 17. Xem danh sach Nguoi dung.########################################################
 
 	else if (quyen == 17) {
+		system("cls");
 		cout << setw(15) << left << "So CMND" << setw(30) << left << "Ho va ten" << setw(15) << left << "Ngay sinh" << setw(30) << left << "Dia chi" << setw(15) << left << "Chuc vu" << setw(15) << left << "Trang thai" << endl;
 		m = TruyXuatNgDung(ngDung);
 		for (int i = 0; i<m; i++) {
@@ -274,6 +275,7 @@ int Chucnang(NguoiDung ngDung[], int quyen, int &m, Quyen q[], char tdn[]) {
 		system("cls");
 		int qq;
 		cout << "Ban muon thoat?(yes = 1, no = 0) "; cin >> qq; cin.ignore();
+		system("cls");
 		return qq;
 	}
 	return 0;
@@ -322,7 +324,7 @@ int main() {
 		//cout << m << endl;
 		char user[30], pass[20];
 		do {
-			system("cls");
+			
 			cout << "################Dang Nhap################" << endl;
 			cout << "Ten Dang Nhap: "; cin.getline(user, 30);
 			cout << "Mat Khau: "; cin.getline(pass, 20);
@@ -331,6 +333,7 @@ int main() {
 			//cout <<ngDung[0].tenDangNhap<<endl;
 			//cout << ngDung[0].MatKhau<< endl;
 			if (strcmp(user, u) == 0 && strcmp(pass, p) == 0) {
+				system("cls");
 				cout << "Dang nhap thanh cong!" << endl;
 				chucvu = 1;
 				kt = 1;
@@ -344,6 +347,7 @@ int main() {
 								break;
 							}
 							else {
+								system("cls");
 								cout << "Dang nhap thanh cong!" << endl;
 								chucvu = ngDung[k].chucVu;
 								strcpy(tdn, ngDung[k].tenDangNhap);
@@ -352,6 +356,7 @@ int main() {
 							}
 						}
 						else {
+							system("cls");
 							cout << "Sai mat khau. Dang nhap that bai!" << endl;
 							break;
 						}
@@ -359,6 +364,7 @@ int main() {
 				}
 
 				if (k == m) {
+					system("cls");
 					cout << "Sai ten dang nhap!" << endl;
 				}
 			}
