@@ -3,6 +3,7 @@
 #include <string>
 #include <string.h>
 #include <iomanip>
+#include <conio.h>
 #pragma warning(disable:4996)
 using namespace std;
 class NguoiDung {
@@ -89,6 +90,25 @@ void CapNhatNgDung(NguoiDung v[]) {
 		cout << endl;
 	}
 	outFile.close();
+}
+void inmk(char pw[20]){
+	int pas = 0;
+	char c;
+	while (c = getch()) {
+		if (c == '\n' || c == '\r') {
+			cout << "\n";
+			break;
+		}
+		else if (c == '\b') {
+			cout << "\b \b"; pas--;
+		}
+		else {
+			cout << '*';
+			pw[pas] = c;
+			pas++;
+		}
+	}
+	for (int i = (pas); i < 20; i++)pw[i] = '\0';
 }
 int Chucnang(NguoiDung ngDung[], int quyen, int &m, Quyen q[], char tdn[]) {
 	char delay[100];
@@ -207,11 +227,11 @@ int Chucnang(NguoiDung ngDung[], int quyen, int &m, Quyen q[], char tdn[]) {
 		for (int i = 0; i<m; i++) {
 			if (strcmp(tdn, ngDung[i].tenDangNhap) == 0) {
 				while (kt1 == 0) {
-					cout << "Nhap mat khau cu: "; cin.getline(mkc, 20);
+					cout << "Nhap mat khau cu: "; inmk(mkc);
 					if (strcmp(mkc, ngDung[i].MatKhau) == 0) {
 						do {
-							cout << "Nhap mat khau moi: "; cin.getline(mk1, 20);
-							cout << "Nhap lai mat khau moi: "; cin.getline(mk2, 20);
+							cout << "Nhap mat khau moi: "; inmk(mk1);
+							cout << "Nhap lai mat khau moi: "; inmk(mk2);
 							if (strcmp(mk1, mk2) == 0) {
 								strcpy(ngDung[i].MatKhau, mk1);
 								kt2 = 1;
@@ -327,7 +347,8 @@ int main() {
 			
 			cout << "################Dang Nhap################" << endl;
 			cout << "Ten Dang Nhap: "; cin.getline(user, 30);
-			cout << "Mat Khau: "; cin.getline(pass, 20);
+			cout << "Mat Khau: ";
+			inmk(pass);
 			char u[5] = "root";
 			char p[5] = "toor";
 			//cout <<ngDung[0].tenDangNhap<<endl;
