@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1494727640 source:/home/congly/Desktop/Assignment2/LIBPRO/main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<string.h>
+	<iomanip>
+
+1494849042 source:/home/congly/Desktop/Assignment2/LIBPRO v1.1/main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<string.h>
+	<iomanip>
+
+1494849236 source:/home/congly/Desktop/Assignment2/LIBPRO v1.2/main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<string.h>
+	<iomanip>
+
